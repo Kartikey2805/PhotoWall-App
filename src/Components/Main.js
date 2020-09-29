@@ -22,8 +22,7 @@ class Main extends Component {
       <div>
         <Link
           to={process.env.PUBLIC_URL + '/'}
-          style={{ textDecoration: 'none' }}
-          to='/'>
+          style={{ textDecoration: 'none' }}>
           <Title title={'PhotoWall'} />
         </Link>
 

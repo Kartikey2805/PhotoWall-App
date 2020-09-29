@@ -17,7 +17,6 @@ function comments(state = {}, action) {
     default:
       return state;
   }
-  return state;
 }
 function posts(state = postsData, action) {
   switch (action.type) {
