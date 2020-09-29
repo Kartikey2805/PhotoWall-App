@@ -10,6 +10,7 @@ import { withRouter } from 'react-router';
 import Single from '../Components/Single';
 
 class Main extends Component {
+  state = { loading: true };
   componentDidMount() {
     this.props.startLoadingPost().then(() => {
       this.setState({ loading: false });
@@ -41,7 +42,9 @@ class Main extends Component {
         />
         <Route
           path='/single/:id'
-          render={(params) => <Single {...this.props} {...params} />}
+          render={(params) => (
+            <Single {...this.props} loading={this.state.loading} {...params} />
+          )}
         />
       </div>
     );
