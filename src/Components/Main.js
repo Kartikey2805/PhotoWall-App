@@ -20,14 +20,12 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <Link
-          to={process.env.PUBLIC_URL + '/'}
-          style={{ textDecoration: 'none' }}>
+        <Link to='/' style={{ textDecoration: 'none' }} to='/'>
           <Title title={'PhotoWall'} />
         </Link>
 
         <Route
-          path={process.env.PUBLIC_URL + '/'}
+          path='/'
           exact
           render={() => (
             <div>
@@ -36,14 +34,14 @@ class Main extends Component {
           )}
         />
         <Route
-          path={process.env.PUBLIC_URL + '/AddPhoto'}
+          path='/AddPhoto'
           exact
           render={({ history }) => (
             <AddPhoto {...this.props} onHistory={history} />
           )}
         />
         <Route
-          path={process.env.PUBLIC_URL + '/single/:id'}
+          path='/single/:id'
           render={(params) => (
             <Single {...this.props} loading={this.state.loading} {...params} />
           )}
