@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function PhotoWall(props) {
   return (
     <div>
-      <Link className='addIcon' to='/AddPhoto'>
+      <Link className='addIcon' to={process.env.PUBLIC_URL + '/AddPhoto'}>
         {' '}
       </Link>
       <div className='photo-grid'>

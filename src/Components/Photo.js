@@ -6,7 +6,7 @@ function Photo(props) {
   const post = props.post;
   return (
     <figure className='figure'>
-      <Link to={`/single/${post.id}`}>
+      <Link to={process.env.PUBLIC_URL + `/single/${post.id}`}>
         <img className='photo' src={post.imageLink} alt={post.description} />
       </Link>
       <figcaption>
@@ -20,7 +20,9 @@ function Photo(props) {
           }}>
           Remove
         </button>
-        <Link to={`/single/${post.id}`} className='button'>
+        <Link
+          to={process.env.PUBLIC_URL + `/single/${post.id}`}
+          className='button'>
           <div className='comment-count '>
             <div className='speech-bubble'></div>
             {props.comments[post.id] ? props.comments[post.id].length : 0}
